@@ -1,24 +1,33 @@
 #!/usr/bin/python3
-"""Function that prints text with 2 new lines after '.', '?', and ':'."""
+"""
+This module provides a function for text indentation.
+It splits text based on specific characters: '.', '?', and ':'.
+"""
 
 
 def text_indentation(text):
-    """Print a text with 2 new lines after '.', '?', and ':'."""
+    """
+    Prints a text with 2 new lines after each '.', '?', and ':'.
+
+    Args:
+        text (str): The text to be formatted.
+
+    Raises:
+        TypeError: If text is not a string.
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    i = 0
-    length = len(text)
-    while i < length:
-        start = i
-        # Find the next punctuation
-        while i < length and text[i] not in ".?:":
-            i += 1
-        # Extract and print the segment before punctuation
-        segment = text[start:i].strip()
-        if segment:
-            print(segment, end="")
-        # If current char is punctuation, print it and 2 newlines
-        if i < length and text[i] in ".?:":
-            print(text[i], end="\n\n")
-        i += 1
+    char = 0
+    while char < len(text) and text[char] == ' ':
+        char += 1
+
+    while char < len(text):
+        print(text[char], end="")
+        if text[char] in ".?:":
+            print("\n")
+            char += 1
+            while char < len(text) and text[char] == ' ':
+                char += 1
+            continue
+        char += 1

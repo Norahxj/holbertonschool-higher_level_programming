@@ -1,28 +1,36 @@
-"""
-Doctests for text_indentation(text)
-"""
+The ``5-text_indentation`` module
+=================================
 
->>> text_indentation = __import__('5-text_indentation').text_indentation
+Using ``text_indentation``
+--------------------------
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Holberton School")
-Holberton School
+Normal Case:
+    >>> text_indentation("Hello. How are you? Fine: thanks.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Fine:
+    <BLANKLINE>
+    thanks.
+    <BLANKLINE>
 
->>> text_indentation("Holberton.School")
-Holberton.
+Checking for leading/trailing spaces:
+    >>> text_indentation("  Wait.   What? ")
+    Wait.
+    <BLANKLINE>
+    What?
+    <BLANKLINE>
 
-School
+Non-string input:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
 
->>> text_indentation("Holberton. School? How are you: John")
-Holberton.
-
-School?
-
-How are you:
-
-John
-
->>> try:
-...     text_indentation(12)
-... except Exception as e:
-...     print(e)
-text must be a string
+Missing argument:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
