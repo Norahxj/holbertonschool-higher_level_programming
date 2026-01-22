@@ -136,4 +136,3 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() takes 2 positional arguments but 3 were given
-"""
