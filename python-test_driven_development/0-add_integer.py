@@ -9,15 +9,19 @@ to integers before performing the addition.
 
 def add_integer(a, b=98):
     """
-    Adds two integers after validating their types.
+    Adds two integers.
 
-    Floats are cast to integers before addition.
-    Raises a TypeError if inputs are not integers or floats.
+    Floats are cast to integers.
+    Raises TypeError if values cannot be converted.
     """
-    if not isinstance(a, (int, float)):
+    try:
+        a = int(a)
+    except (TypeError, ValueError):
         raise TypeError("a must be an integer")
 
-    if not isinstance(b, (int, float)):
+    try:
+        b = int(b)
+    except (TypeError, ValueError):
         raise TypeError("b must be an integer")
 
-    return int(a) + int(b)
+    return a + b
