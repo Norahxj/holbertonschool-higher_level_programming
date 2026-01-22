@@ -15,7 +15,6 @@ Doctests for print_square(size)
 #
 
 >>> print_square(0)
-#
 
 # invalid input
 >>> try:
