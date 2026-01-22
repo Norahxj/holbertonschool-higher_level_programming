@@ -7,14 +7,23 @@ Doctests for text_indentation(text)
 >>> text_indentation("Holberton School")
 Holberton School
 
->>> text_indentation("Holberton.")
+>>> text_indentation("Holberton.School")
 Holberton.
 
->>> text_indentation("Holberton.")
+School
+
+>>> text_indentation("Holberton. School? How are you: John")
 Holberton.
+
+School?
+
+How are you:
+
+John
 
 >>> try:
 ...     text_indentation(12)
 ... except Exception as e:
 ...     print(e)
 text must be a string
+"""
