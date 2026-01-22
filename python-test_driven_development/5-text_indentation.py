@@ -18,13 +18,12 @@ def text_indentation(text):
     if not text:
         return
 
-    result = ""
+    buffer = ""
     for char in text:
-        result += char
+        buffer += char
         if char in ".?:":
-            # Print stripped result, no trailing space
-            print(result.strip())
+            print(buffer.rstrip())
             print()  # second newline
-            result = ""
-    if result:
-        print(result.strip())
+            buffer = ""
+    if buffer:
+        print(buffer.rstrip())
