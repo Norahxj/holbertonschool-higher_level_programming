@@ -4,18 +4,24 @@ Doctests for text_indentation
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Hello. How are you? I am fine: thank you.")
-Hello.
-$
-How are you?
-$
-I am fine:
-$
-thank you.
+>>> text_indentation("Holberton School")
+Holberton School
 $
 
->>> text_indentation("Single sentence without punctuation")
-Single sentence without punctuation
+>>> text_indentation("Holberton.School")
+Holberton.
+$
+School
+$
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+$
+School?
+$
+How are you:
+$
+John
 $
 
 >>> text_indentation("   Leading and trailing spaces.  ")
@@ -24,7 +30,6 @@ $
 
 >>> text_indentation("")
 # Should print nothing
-"""
 
 # TypeError check
 >>> try:
@@ -32,3 +37,4 @@ $
 ... except Exception as e:
 ...     print(e)
 text must be a string
+"""
