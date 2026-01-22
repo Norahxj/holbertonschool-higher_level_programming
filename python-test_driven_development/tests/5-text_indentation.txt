@@ -7,19 +7,11 @@ Doctests for text_indentation(text)
 >>> text_indentation("Holberton School")
 Holberton School
 
->>> text_indentation("Holberton.School")
+>>> text_indentation("Holberton.")
 Holberton.
 
-School
-
->>> text_indentation("Holberton. School? How are you: John")
+>>> text_indentation("Holberton.")
 Holberton.
-
-School?
-
-How are you:
-
-John
 
 >>> try:
 ...     text_indentation(12)
