@@ -1,7 +1,3 @@
-"""
-Doctests for text_indentation(text)
-"""
-
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 >>> text_indentation("Holberton School")
@@ -22,10 +18,8 @@ $
 John
 
 >>> text_indentation("")
-# (prints nothing)
-
 >>> try:
-...     text_indentation(42)
+...     text_indentation(12)
 ... except Exception as e:
 ...     print(e)
 text must be a string
