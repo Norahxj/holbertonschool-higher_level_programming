@@ -1,0 +1,34 @@
+"""
+Doctests for text_indentation
+"""
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. How are you? I am fine: thank you.")
+Hello.
+$
+How are you?
+$
+I am fine:
+$
+thank you.
+$
+
+>>> text_indentation("Single sentence without punctuation")
+Single sentence without punctuation
+$
+
+>>> text_indentation("   Leading and trailing spaces.  ")
+Leading and trailing spaces.
+$
+
+>>> text_indentation("")
+# Should print nothing
+"""
+
+# TypeError check
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
