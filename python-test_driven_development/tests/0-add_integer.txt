@@ -1,10 +1,11 @@
 """
-Doctest for 0-add_integer.py
+Test file for 0-add_integer.py
+Run with: python3 -m doctest -v ./tests/0-add_integer.txt
 """
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-# Normal cases
+# Regular cases
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
@@ -14,7 +15,7 @@ Doctest for 0-add_integer.py
 >>> add_integer(100.3, -2)
 98
 
-# Type errors
+# Wrong types
 >>> add_integer(4, "School")
 Traceback (most recent call last):
     ...
@@ -24,16 +25,18 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-# Float NaN and infinite checks
+# Edge cases: NaN
 >>> add_integer(float('nan'), 5)
 Traceback (most recent call last):
     ...
 ValueError: a cannot be NaN or infinite
->>> add_integer(5, float('inf'))
+>>> add_integer(5, float('nan'))
 Traceback (most recent call last):
     ...
 ValueError: b cannot be NaN or infinite
->>> add_integer(float('-inf'), 0)
+
+# Edge cases: Infinity
+>>> add_integer(float('inf'), 0)
 Traceback (most recent call last):
     ...
 ValueError: a cannot be NaN or infinite
@@ -41,3 +44,9 @@ ValueError: a cannot be NaN or infinite
 Traceback (most recent call last):
     ...
 ValueError: b cannot be NaN or infinite
+
+# Edge cases: float numbers
+>>> add_integer(10.9, 5.1)
+15
+>>> add_integer(-3.7, 3.2)
+-1
