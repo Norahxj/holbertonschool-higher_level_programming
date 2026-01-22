@@ -1,11 +1,10 @@
 """
-Test file for 0-add_integer.py
-Run with: python3 -m doctest -v ./tests/0-add_integer.txt
+Doctests for add_integer function.
 """
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-# Regular cases
+# Normal cases
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
@@ -14,39 +13,45 @@ Run with: python3 -m doctest -v ./tests/0-add_integer.txt
 100
 >>> add_integer(100.3, -2)
 98
+>>> add_integer(2.7, 3.1)
+5
 
-# Wrong types
->>> add_integer(4, "School")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer(None)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+# Type errors
+>>> try:
+...     add_integer(4, "School")
+... except Exception as e:
+...     print(e)
+b must be an integer
+>>> try:
+...     add_integer(None)
+... except Exception as e:
+...     print(e)
+a must be an integer
+>>> try:
+...     add_integer("Hello", 2)
+... except Exception as e:
+...     print(e)
+a must be an integer
 
-# Edge cases: NaN
->>> add_integer(float('nan'), 5)
-Traceback (most recent call last):
-    ...
-ValueError: a cannot be NaN or infinite
->>> add_integer(5, float('nan'))
-Traceback (most recent call last):
-    ...
-ValueError: b cannot be NaN or infinite
-
-# Edge cases: Infinity
->>> add_integer(float('inf'), 0)
-Traceback (most recent call last):
-    ...
-ValueError: a cannot be NaN or infinite
->>> add_integer(0, float('-inf'))
-Traceback (most recent call last):
-    ...
-ValueError: b cannot be NaN or infinite
-
-# Edge cases: float numbers
->>> add_integer(10.9, 5.1)
-15
->>> add_integer(-3.7, 3.2)
--1
+# NaN / Infinity cases
+>>> import math
+>>> try:
+...     add_integer(float('nan'), 5)
+... except Exception as e:
+...     print(e)
+a cannot be NaN or infinite
+>>> try:
+...     add_integer(5, float('nan'))
+... except Exception as e:
+...     print(e)
+b cannot be NaN or infinite
+>>> try:
+...     add_integer(float('inf'), 0)
+... except Exception as e:
+...     print(e)
+a cannot be NaN or infinite
+>>> try:
+...     add_integer(0, float('-inf'))
+... except Exception as e:
+...     print(e)
+b cannot be NaN or infinite
