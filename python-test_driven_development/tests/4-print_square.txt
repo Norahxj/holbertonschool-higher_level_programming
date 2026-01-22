@@ -4,30 +4,46 @@ Doctests for the function print_square(size)
 
 >>> print_square = __import__('4-print_square').print_square
 
+# Regular squares
 >>> print_square(4)
 ####
 ####
 ####
 ####
 
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
 >>> print_square(1)
 #
 
+# Zero size: nothing should be printed
 >>> print_square(0)
-# nothing printed
 
+# Negative size: should raise ValueError
 >>> try:
 ...     print_square(-1)
 ... except Exception as e:
 ...     print(e)
 size must be >= 0
 
+# Float size: should raise TypeError
 >>> try:
 ...     print_square(3.5)
 ... except Exception as e:
 ...     print(e)
 size must be an integer
 
+# Non-integer type: should raise TypeError
 >>> try:
 ...     print_square("3")
 ... except Exception as e:
