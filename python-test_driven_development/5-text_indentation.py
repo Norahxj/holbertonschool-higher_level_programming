@@ -9,18 +9,14 @@ def text_indentation(text):
     i = 0
     length = len(text)
     while i < length:
-        print_char = text[i]
-        if print_char in ".?:":
-            # print character and 2 newlines, no spaces before/after
-            print(print_char)
-            print()
+        if text[i] in ".?:":
+            print(text[i], end="\n\n")  # 2 new lines
         else:
-            # collect sequence of characters until next punctuation
             start = i
             while i < length and text[i] not in ".?:":
                 i += 1
             line = text[start:i].strip()
             if line:
                 print(line)
-            i -= 1  # adjust for the loop increment
+            i -= 1
         i += 1
