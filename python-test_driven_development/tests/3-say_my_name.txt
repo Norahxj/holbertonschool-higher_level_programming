@@ -11,11 +11,11 @@ My name is John Smith
 My name is Walter White
 >>> say_my_name("Bob")
 My name is Bob
->>> say_my_name("Anna", "")
+>>> say_my_name("Anna","")
 My name is Anna
->>> say_my_name("", "Doe")
+>>> say_my_name("","Doe")
 My name is Doe
->>> say_my_name("Bob", "Lenon")
+>>> say_my_name("Bob","Lenon")
 My name is Bob Lenon
 
 # Wrong types
@@ -29,5 +29,5 @@ Traceback (most recent call last):
 TypeError: last_name must be a string
 
 # Empty strings for both names
->>> say_my_name("", "")
+>>> say_my_name("","")
 My name is
