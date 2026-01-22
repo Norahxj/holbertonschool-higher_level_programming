@@ -6,6 +6,7 @@ The function validates input types and safely casts floats
 to integers before performing the addition.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two integers after validating their types.
