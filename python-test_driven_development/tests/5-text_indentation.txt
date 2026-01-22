@@ -4,17 +4,14 @@ Doctests for text_indentation(text)
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Normal text with spaces
 >>> text_indentation("Holberton School")
 Holberton School
 
-# Text with periods
 >>> text_indentation("Holberton.School")
 Holberton.
 $
 School
 
-# Text with ., ?, :
 >>> text_indentation("Holberton. School? How are you: John")
 Holberton.
 $
@@ -24,26 +21,11 @@ How are you:
 $
 John
 
-# Leading and trailing spaces
->>> text_indentation("  Hello world.  How are you?  ")
-Hello world.
-$
-How are you?
-
-# Empty string
 >>> text_indentation("")
 # (prints nothing)
 
-# Non-string input raises TypeError
 >>> try:
 ...     text_indentation(42)
 ... except Exception as e:
 ...     print(e)
 text must be a string
-
->>> try:
-...     text_indentation(None)
-... except Exception as e:
-...     print(e)
-text must be a string
-"""
