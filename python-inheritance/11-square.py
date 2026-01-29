@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a Square class inheriting from Rectangle."""
+"""Module that defines a Square class inheriting from Rectangle."""
 
 Rectangle = __import__('9-rectangle').Rectangle
 
@@ -15,4 +15,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """Return the square description."""
-        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
+        width = self._Rectangle__width
+        height = self._Rectangle__height
+        return "[Square] {}/{}".format(width, height)
