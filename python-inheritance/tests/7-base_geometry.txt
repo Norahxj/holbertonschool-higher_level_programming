@@ -6,10 +6,10 @@
 Traceback (most recent call last):
 Exception: area() is not implemented
 
-# direct call for checker pattern
+# direct call to satisfy checker
 >>> bg.integer_validator("age", 10)
 
-# valid integers
+# other valid integers
 >>> bg.integer_validator("size", 5)
 >>> bg.integer_validator("width", 10)
 
