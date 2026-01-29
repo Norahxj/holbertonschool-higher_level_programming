@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines a function to check if an object is a subclass instance only."""
+"""Module defines a function to check if an object is a subclass instance."""
 
 
 def inherits_from(obj, a_class):
