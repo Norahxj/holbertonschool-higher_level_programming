@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines a function to check an object is an instance of a class."""
+"""Module defines function to check an object is an instance of class."""
 
 
 def is_same_class(obj, a_class):
