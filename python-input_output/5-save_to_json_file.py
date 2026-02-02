@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module provides function to save Python object to file using JSON representation."""
+"""provides function to save Python object to file using JSON representation."""
 import json
 
 
