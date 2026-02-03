@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a Student class with JSON serialization & attribute filtering."""
+"""Defines a Student class with JSON serialization and attribute filtering."""
 
 
 class Student:
@@ -15,9 +15,13 @@ class Student:
         """
         Returns the dictionary representation of the Student instance.
 
-        If attrs is a list of strings, only attributes contained in list are included.
-        Otherwise, all attributes are included.
+        If attrs is a list of strings, only attributes contained in the
+        list are included. Otherwise, all attributes are included.
         """
         if isinstance(attrs, list):
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+            return {
+                key: value
+                for key, value in self.__dict__.items()
+                if key in attrs
+            }
         return self.__dict__.copy()
