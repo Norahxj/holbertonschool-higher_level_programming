@@ -22,7 +22,7 @@ def main():
 
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name REGEXP BINARY '^N' ORDER BY id ASC"
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
     )
 
     for state in cursor.fetchall():
