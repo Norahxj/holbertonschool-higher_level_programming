@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states with names starting with N from the database.
+Lists all states with names starting with uppercase N from the database.
 """
 
 import sys
@@ -22,7 +22,7 @@ def main():
 
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+        "SELECT * FROM states WHERE name REGEXP BINARY '^N' ORDER BY id ASC"
     )
 
     for state in cursor.fetchall():
